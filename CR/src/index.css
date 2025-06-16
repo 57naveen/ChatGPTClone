@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #ffffff;
+  --text-main: #000000;
+  --topbar-bg: #ffffff;
+  --topbar-border: #cccccc;
+  /* --logo-bg: #000000; */
+  --sidebar-bg: #f0f0f0;
+  --sidebar-text: #000000;
+  --sidebar-hover: #e0e0e0;
+  --sidebar-active: #d0d0d0;
+   --inputbox-bg: #f0f0f0;
+  --inputbox-text: #000;
+  --inputbox-placeholder: #888;
+  --inputbox-icon: #666;
+  --inputbox-icon-hover: #000;
+   --user-msg-bg: #e0f2fe;         /* Light blue for user in light mode */
+  --user-msg-text: #0f172a;       /* Slate-900 */
+  --bot-msg-bg: #f3f4f6;          /* Light gray */
+  --bot-msg-text: #111827;    
+ 
+}
+
+.dark {
+  --bg-main: #212121;
+  --text-main: #ffffff;
+  --topbar-bg: #212121;
+  --topbar-border: #444654;
+  --logo-bg: #ffffff;
+   --sidebar-bg: #202123;
+  --sidebar-text: #ffffff;
+  --sidebar-hover: #343541;
+  --sidebar-active: #40414f;
+   --inputbox-bg: #424242;
+  --inputbox-text: #fff;
+  --inputbox-placeholder: #aaa;
+  --inputbox-icon: #ccc;
+  --inputbox-icon-hover: #fff;
+  --user-msg-bg: #424242;         /* Indigo-800 */
+  --user-msg-text: #f8fafc;       /* Light text */
+  --bot-msg-bg: #212121;
+  --bot-msg-text: #ffffff;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+@layer base {
+  /* Scrollbar base styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Default (light mode) */
+  :root {
+    --scrollbar-track: #f3f4f6; /* light gray-100 */
+    --scrollbar-thumb: #cbd5e1; /* slate-300 */
+    --scrollbar-thumb-hover: #94a3b8; /* slate-400 */
+  }
+
+  /* Dark mode overrides */
+  .dark {
+    --scrollbar-track: #202123; /* sidebar dark */
+    --scrollbar-thumb: #4B5563; /* gray-600 */
+    --scrollbar-thumb-hover: #9CA3AF; /* gray-400 */
+  }
+
+  /* Apply CSS variables to scrollbar */
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+  }
+
+  /* Firefox scrollbar styling */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+}
